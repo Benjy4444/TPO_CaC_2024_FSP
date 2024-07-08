@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family:'Roboto Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #302626; /* Fondo gris para toda la página */
+}
+header{
+    font-family:'Roboto Condensed', sans-serif;
+}
+
+.navbar.custom-shadow {
+    box-shadow: 0 4px 6px -6px rgba(255, 255, 255, 0.2); /* Sombra blanca con baja opacidad */
+  }
+  
+
+
+.container-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    margin-top: 50px;
+}
+
+.full-height {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  
+}
+
+.carousel {
+    width: 100%;
+    height: 65vh;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.carousel-inner img {
+    height: 500px;
+    object-fit: cover; 
+    border-radius: 20px; 
+}
+
+footer {
+    margin-top: auto; 
+    width: 100%;
+ 
+}
+
+.footer-icons {
+    font-size: 35px;
+}
+
+footer.custom-shadow {
+    box-shadow: 0 -4px 6px -6px rgba(255, 255, 255, 0.2); /* Sombra blanca con baja opacidad */
+  }
+  
+
+.close-circle {
+    position: absolute; 
+    top: 5px; 
+    right: -40px;
+    border-radius: 50%; 
+    width: 30px; 
+    height: 30px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 10;    
+    border: 2px solid #e9ecef;    
+    background-color:  #e9ecef;
+}
+
+.agenda, .videos {
+    width: 100%;
+    max-width: 1200px;
+    /*height: 100%;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.agenda .container, .videos .container {
+    text-align: center;
+}
+
+.agenda .caja, .videos .caja {
+    background-color: white;
+    width: calc(100% - 40px); /* Para dispositivos móviles */
+    height: 400px; /* Ajustar la altura según sea necesario */
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.25s;
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en una columna */
+    justify-content: space-between; /* Espacio entre los elementos */
+}
+.agenda .caja {
+    max-width: 330px;
+}
+
+.videos .caja {
+    height: 275px; /* Ajustar la altura para la sección de videos */
+}
+
+.agenda .caja:hover, .videos .caja:hover {
+    background-color: lightgrey;
+    transform: translateY(-10px);
+    box-shadow: 0 12px 16px rgb(0, 0, 0, 0.2);
+}
+
+.agenda .caja img, .videos .caja iframe {
+    width: 100%;
+    height: auto;
+    max-height: 70%; /* La imagen ocupa un máximo del 70% de la altura de la tarjeta */
+}
+
+.agenda .caja h3, .videos .caja h3 {
+    font-weight: 600;
+    margin: 0;
+    padding: 10px 0; /* Añadir padding para espacio */
+}
+
+.agenda .caja p, .videos .caja p {
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+    padding-bottom: 1rem;
+}
+
+/* Asegura que los elementos de texto estén siempre visibles y no se superpongan con la imagen */
+.agenda .caja > div {
+    padding: 1rem;
+    background: white;
+}
+#concert-calendar {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('./assets/LucesFondo.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Hace que la imagen de fondo cubra todo el contenedor */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+.concert-calendar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+#videos-section {
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('./assets/ConcertFondo.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Hace que la imagen de fondo cubra todo el contenedor */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+.videos-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+
+}
+
+/* @media (min-width: 576px) {
+    .agenda .caja, .videos .caja {
+        width: calc(50% - 40px); 
+    }
+}
+
+@media (min-width: 768px) {
+    .agenda .caja, .videos .caja {
+        width: calc(33.333% - 40px); 
+    }
+}
+
+@media (min-width: 992px) {
+    .agenda .caja, .videos .caja {
+        width: calc(25% - 40px); 
+    }
+} */
+
+#about-us h2 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: bold;
+  }
+  
+  
+#about-us p {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  
+.wrap {
+      position: relative;
+      width: 100vw;
+      height: auto; /* Ajustar la altura automáticamente */
+      min-height: 90vh; /* Asegurar una altura mínima */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url(./assets/FondoUs.jpg);
+      background-size: cover; /* Hacer que el fondo sea responsive */
+      background-position: center;
+      overflow: hidden; /* Evitar que el contenido se salga del contenedor */
+      padding: 20px; /* Añadir padding para espaciar el contenido */
+  }
+  
+  
+  .wrap-texto {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    text-align: center;
+    max-width: 80%; /* Cambié width por max-width */
+    padding: 20px; /* Añadido padding para separar el texto del borde del contenedor */
+    background-color: rgba(119, 34, 34, 0.75);
+    margin-top: auto; /* Colocar el texto en la parte inferior del contenedor */
+    overflow-y: auto; /* Asegurar que el contenido se pueda desplazar si es necesario */  
+  }
+  
+  /* Media queries para diferentes resoluciones */
+  /* Estilos para pantalla grande (1920x1080) */
+  @media only screen and (min-width: 1600px) {
+    .wrap-texto {
+      width: 60%;
+    }
+  }
+  
+  /* Estilos para pantalla mediana (1366x768) */
+  @media only screen and (max-width: 1600px) {
+    .wrap-texto {
+      width: 70%;
+    }
+  }
+  
+  /* Estilos para pantalla pequeña (768x1024) */
+  @media only screen and (max-width: 1024px) {
+    .wrap-texto {
+      width: 80%;
+    }
+  }
+  
+  /* Estilos para pantalla muy pequeña (360x720) */
+  @media only screen and (max-width: 360px) {
+    .wrap-texto {
+      width: 90%;
+    }
+  }
+/* Media queries para hacer las tarjetas más responsivas
+@media (min-width: 576px) {
+    .agenda .caja, .videos .caja {
+        width: calc(50% - 40px); 
+    }
+}
+
+@media (min-width: 768px) {
+    .agenda .caja, .videos .caja {
+        width: calc(33.333% - 40px); 
+    }
+}
+
+@media (min-width: 992px) {
+    .agenda .caja, .videos .caja {
+        width: calc(25% - 40px); 
+    }
+}
+ Tampoco esta andando agregando esto*/ 
+
+
+
+
